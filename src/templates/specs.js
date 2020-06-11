@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 
@@ -16,6 +16,11 @@ export default function Template({
   }
   return (
     <Layout>
+      {!pageContext.isHome && (
+        <h4>
+          <Link to="/specs">Back to specs</Link>
+        </h4>
+      )}
       <div
         className="spec-page"
         dangerouslySetInnerHTML={{ __html: html }}
