@@ -12,7 +12,7 @@ export default function Template({
   // Strip away .md extension
   html = html.replace(/\.md/g, '')
   if (pageContext.isHome) {
-    html = html.replace(/(href=")([^:]+")/g, '$1/specs/$2')
+    html = html.replace(/(href=")([^:]+?")/g, '$1/specs/$2')
   }
   return (
     <Layout>
