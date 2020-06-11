@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/iscn-io",
   siteMetadata: {
     title: `ISCN`,
     description: `The goal of International Standard Content Number, abbreviated as ISCN, is to create a fundamental schema for a digital content registration.`,
