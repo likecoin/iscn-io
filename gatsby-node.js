@@ -28,17 +28,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   specsMdResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
     let [,path] = node.fileAbsolutePath.match(/(specs\/*.+).md$/)
+    const context = {
+      // additional data can be passed via context
+      id: node.id,
+    }
     if (/specs\/README/.test(path)) {
       // Is index page
       path = 'specs'
+      context.isHome = true
     }
     createPage({
       path,
       component: specsTemplate,
-      context: {
-        // additional data can be passed via context
-        id: node.id,
-      },
+      context,
     })
   })
 }
