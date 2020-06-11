@@ -34,7 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
     if (/specs\/README/.test(path)) {
       // Is index page
-      path = 'specs'
+      path = '/'
       context.isHome = true
     }
     createPage({

@@ -18,7 +18,7 @@ export default function Template({
     <Layout>
       {!pageContext.isHome && (
         <h4>
-          <Link to="/specs">Back to specs</Link>
+          <Link to="/">Back to home</Link>
         </h4>
       )}
       <div
