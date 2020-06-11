@@ -4,4 +4,41 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+
+  // Create specs pages
+  const specsTemplate = require.resolve(`./src/templates/specs.js`)
+  const specsMdResult = await graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+          }
+        }
+      }
+    }
+  `)
+  // Handle errors
+  if (specsMdResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query on specs.`)
+    return
+  }
+  specsMdResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    let [,path] = node.fileAbsolutePath.match(/(specs\/*.+).md$/)
+    if (/specs\/README/.test(path)) {
+      // Is index page
+      path = 'specs'
+    }
+    createPage({
+      path,
+      component: specsTemplate,
+      context: {
+        // additional data can be passed via context
+        id: node.id,
+      },
+    })
+  })
+}
