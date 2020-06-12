@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, withPrefix } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,7 +13,7 @@ export default function Template({
   // Strip away .md extension
   html = html.replace(/\.md/g, '')
   if (pageContext.isHome) {
-    html = html.replace(/(href=")([^:]+?")/g, '$1/specs/$2')
+    html = html.replace(/(href=")([^:]+?")/g, `$1${withPrefix('/specs/')}$2`)
   }
   const title = pageContext.isHome ? 'Home' : html.match(/<h1>(.*?)<\/h1>/)[1]
   return (
