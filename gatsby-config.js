@@ -4,7 +4,7 @@ module.exports = {
     title: `ISCN`,
     description: `The goal of International Standard Content Number, abbreviated as ISCN, is to create a fundamental schema for a digital content registration.`,
     author: `@likecoin`,
-    image: "/images/logo.png",
+    image: "/images/logo-white.png",
     url: "https://iscn.io",
   },
   plugins: [
@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
         background_color: `#28646E`,
         theme_color: `#28646E`,
         display: `minimal-ui`,
-        icon: `src/images/iscn-favicon.png`, // This path is relative to the root of the site.
+        icon: `static/images/logo-white.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
