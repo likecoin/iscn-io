@@ -28,11 +28,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   specsMdResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
     let [,path,version] = node.fileAbsolutePath.match(/specs\/(.+?)\/?(v\d+)?.md$/)
-    if (/README/.test(path)) {
+    if (path.startsWith('README')) {
       // Is index page
       path = '/'
     } else {
-      path = `${path}-${version}`
+      path = path.replace('/README', '')
     }
     const context = {
       // additional data can be passed via context
