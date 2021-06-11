@@ -1,16 +1,14 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://iscn.io">
+    <img alt="iscn" src="https://iscn.io/favicon-32x32.png" width="32" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  ISCN official site
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+The repo for [https://iscn.io](https://iscn.io), the official site for International Standard Content Number Specifications.
 
 ## 🚀 Quick start
 
