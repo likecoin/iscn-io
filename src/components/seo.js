@@ -35,9 +35,9 @@ function SEO({ description, lang, meta, title, image }) {
     author,
   } = site.siteMetadata
 
-  const metaTitle =  title || defaultTitle
+  const metaTitle = title || defaultTitle
   const metaDescription = description || defaultDescription
-  const metaImage =  `${siteUrl}${image || defaultImage}`
+  const metaImage = `${siteUrl}${image || defaultImage}`
 
   return (
     <Helmet
