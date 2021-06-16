@@ -8,6 +8,13 @@ module.exports = {
     url: "https://iscn.io",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-copy-files",
+      options: {
+        source: `${__dirname}/specs/images`,
+        destination: "images",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
